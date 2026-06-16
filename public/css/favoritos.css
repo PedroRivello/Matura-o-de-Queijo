@@ -27,6 +27,86 @@ body {
     font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.container {
+    width: 100%;
+    max-width: 1200px;
+
+}
+
+.navbar {
+    height: var(--tamanho-header);
+    border-bottom: 2px solid #b48134;
+    background-color: rgb(134, 57, 5);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 300px;
+}
+
+.nav-logo {
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    background: #e3b062;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+    transition: all .3s ease;
+}
+
+.nav-links a:hover {
+    color: #b48134;
+    transform: translateY(-3px);
+}
+
+.agora {
+    font-weight: 800;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #e0b404;
+}
+
+.titulo-header {
+  color: #ffffff;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 30px;
+}
+
 
 .cards-container {
     width: 90%;
