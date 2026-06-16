@@ -23,7 +23,7 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  border-bottom: 2px solid #b48134;
 }
 
 .header .container {
@@ -34,7 +34,24 @@ body {
 
 .header a {
   text-decoration: none;
+  border-radius: 50px;
   color: #e3b062;
+  border: none;
+  padding: 10px 20px;
+  border: none;
+  background: #e3b062;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+  margin-right: 20px;
+}
+
+.header a:hover {
+  color: #b48134;
+  transform: translateY(-10px);
 }
 
 .agora {
@@ -51,7 +68,7 @@ body {
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #e3b062;
   width: fit-content;
   font-weight: 500;
 }
@@ -65,7 +82,7 @@ body {
 .banner {
   height: var(--tamanho-banner);
   color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/backgroundQueijo2.webp');
   background-size: cover;
 }
 
@@ -84,6 +101,7 @@ body {
 
 .banner .container span {
   font-weight: 800;
+  color: #ffc400;
 }
 
 /* MISSÃO VISÃO VALORES */
@@ -121,8 +139,8 @@ body {
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
-  height: 150px;
+  background-color: #b48134;
+  height: 100px;
   color: #fff;
   display: flex;
   font-size: 15px;
@@ -237,7 +255,7 @@ body {
 
 /* FORMULARIO */
 
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
@@ -254,7 +272,7 @@ body {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
@@ -310,7 +328,7 @@ input {
 
 .simulador .container {
   flex-direction: column;
-  overflow: scroll; 
+  overflow: scroll;
   height: var(--tamanho-simulador);
 }
 
@@ -354,9 +372,57 @@ input {
 }
 
 @keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
+  0% {
+    transform: rotate(25deg)
+  }
+
+  25% {
+    transform: rotate(-25deg)
+  }
+
+  50% {
+    transform: rotate(25deg)
+  }
+
+  75% {
+    transform: rotate(-25deg)
+  }
+
+  100% {
+    transform: rotate(25deg)
+  }
+}
+h2{
+  color: #e3b062; 
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.social .container .boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  padding: 30px 0;
+  gap: 20px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.box p {
+  flex-grow: 1; 
+}
+.box img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
 }
