@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --tamanho-header: 80px;
+    --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-footer: 65px;
+}
+
+
+
+
+body {
+    background-color: #f7efe7;
+    background-color: #f7efe7;
+    color: #4b2c35;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.cards-container {
+    width: 90%;
+    margin: 40px auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+    gap: 30px;
+}
+
+.Card {
+   background-image: url('../assets/queijo2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 25px;
+    padding: 25px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.1),
+        inset 0 2px 10px rgba(255,255,255,.4);
+
+    transition: .3s;
+}
+
+
+.Card:hover {
+      transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.15),
+        inset 0 2px 10px rgba(255,255,255,.5);
+}
+
+.Card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+
+
+    border-radius: 50%;
+
+    top: 30px;
+    left: 25px;
+
+}
+
+.Card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+   
+
+    border-radius: 50%;
+
+    top: 130px;
+    right: 40px;
+
+}
+
+.Card img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    margin: 10px auto 20px;
+    display: block;
+}
+
+.Card h3 {
+    color: #5d3434;
+
+    font-size: 1.8rem;
+
+    margin-bottom: 15px;
+}
+
+.tipo {
+    display: inline-block;
+
+    background-color: #f5e7a6;
+
+    color: #7a5a16;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.Descrição {
+   position: relative;
+
+    color: #4b2c35;
+
+    line-height: 1.8;
+
+    padding: 20px;
+
+    background: rgba(255,255,255,.5);
+
+    border-radius: 15px;
+}
+
+.Descrição::before {
+
+
+    position: absolute;
+
+    top: -10px;
+    left: 10px;
+
+    font-size: 3rem;
+
+    color: #e0b404;
+
+    opacity: .6;
+}
+
+.titulo {
+    text-align: center;
+
+    margin: 40px 0;
+}
+
+.titulo h1 {
+    color: #e0b404;
+
+    font-size: 3.5rem;
+
+    font-weight: 700;
+}
