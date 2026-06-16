@@ -35,44 +35,83 @@
             </div>
     </nav>
 
-  <div class="titulo">
-    <h1>QUEIJOS</h1>
-</div>
-
-<section class="cards-container">
-
-    <div class="Card">
-        <h3>Nome do queijo</h3>
-
-        <img src="./assets/icon/jerry-removebg-preview (1).png" alt="">
-
-        <p class="tipo">Tipo</p>
-
-        <p class="Descrição">
-            Descrição do queijo
-        </p>
-
-        <button class="favoritar">
-            FAVORITAR
-        </button>
+    <div class="titulo">
+        <h1>QUEIJOS</h1>
     </div>
 
-</section>
+    <section class="cards-container" id="containerQueijo">
 
+        <div class="Card">
+            <h3>Nome do queijo</h3>
 
+            <img src="./assets/icon/jerry-removebg-preview (1).png" alt="">
 
+            <p class="tipo">Tipo</p>
 
+            <p class="Descrição">
+                Descrição do queijo
+            </p>
 
+            <button class="favoritar">
+                FAVORITAR
+            </button>
+        </div>
 
-
+    </section>
 
 </body>
 <script>
 
+    var idUser = sessionStorage.getItem("ID_USUARIO")
+    function buscarQueijos() {
+        fetch("/queijos/buscar")
+            .then((resposta) => resposta.json())
+            .then((queijos) => {
 
+                var container = document.getElementById("containerQueijo");
+                container.innerHTML = "";
 
+                queijos.forEach((queijo) => {
+                    container.innerHTML += `
+        <div class="Card">
+            <h3>${queijo.nome}</h3>
+            <img src="${queijo.foto}" alt="">
+            <p class="tipo">Classificação: ${queijo.Tipo}</p>
+            <p class="tipo">Umidade: ${queijo.umidade}</p>
+            <p class="Descrição">
+            ${queijo.descricao}
+            </p>
+            <button class="favoritar" onclick="favoritar(${queijo.id})">
+                FAVORITAR
+            </button>
+        </div>
+                `;
+                });
 
+            })
+            .catch((erro) => {
+                console.error("Erro ao buscar queijos:", erro);
+            });
+    }
 
+    function favoritar(idQueijo) {
+        var idUsuario = sessionStorage.getItem("ID_USUARIO");
+
+        if (!idUsuario) {
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 2000);
+            return;
+        }
+
+        fetch(`/queijos/${idQueijo}/favoritar/${idUsuario}`, {
+            method: "POST"
+        })
+            .then((res) => res.json())
+            .catch((erro) => console.error("Erro ao favoritar:", erro));
+    }
+
+    buscarQueijos() 
 </script>
 
 </html>
